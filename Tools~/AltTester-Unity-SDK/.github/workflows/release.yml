@@ -1,0 +1,263 @@
+name: release
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish-python-pip:
+        description: "Publish Python pip package"
+        required: false
+        default: false
+        type: boolean
+      publish-robot-pip:
+        description: "Publish Robot pip package"
+        required: false
+        default: false
+        type: boolean
+      publish-nuget:
+        description: "Publish NuGet package"
+        required: false
+        default: false
+        type: boolean
+      create-unity-package:
+        description: "Create Unity package"
+        required: false
+        default: false
+        type: boolean
+      upload-unity-package:
+        description: "Upload Unity package"
+        required: false
+        default: false
+        type: boolean
+      create-jar:
+        description: "Create JAR archive"
+        required: false
+        default: false
+        type: boolean
+      upload-jar:
+        description: "Upload JAR archive"
+        required: false
+        default: false
+        type: boolean
+      java-release:
+        description: "Java Maven Central release"
+        required: false
+        default: false
+        type: boolean
+  release:
+    types: [published]
+
+jobs:
+  publish-python-pip-package:
+    runs-on: [self-hosted, MAC37]
+    if: github.event_name == 'release' || github.event.inputs.publish-python-pip == 'true'
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.12.4"
+
+      - name: Install dependencies
+        run: |
+          pip install -r "Bindings~/python/requirements.txt"
+          pip install -r "Bindings~/python/requirements-dev.txt"
+
+      - name: Upload to PyPi
+        run: |
+          cd "Bindings~/python"
+          pip install --upgrade build twine
+          rm -rf dist/
+          python3 -m build
+          python3 -m twine upload dist/*
+
+  publish-robot-pip-package:
+    runs-on: [self-hosted, MAC37]
+    if: github.event_name == 'release' || github.event.inputs.publish-robot-pip == 'true'
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.12.4"
+
+      - name: Install dependencies
+        run: |
+          pip install -r "Bindings~/robot/requirements.txt"
+          pip install -r "Bindings~/robot/requirements-dev.txt"
+
+      - name: Upload to PyPi
+        run: |
+
+          cd "Bindings~/robot"
+          pip install --upgrade build twine --break-system-packages
+          rm -rf dist/
+          python3 -m build --sdist --wheel --outdir dist .
+          python3 -m twine upload dist/*
+
+  publish-nuget-package:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release' || github.event.inputs.publish-nuget == 'true'
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v2.1.1
+
+      - name: Upload to Nuget
+        env:
+          NUGET_DEPLOY_KEY: ${{ secrets.NUGET_DEPLOY_KEY }}
+        run: |
+          cd "Bindings~/dotnet"
+          dotnet pack AltDriver/AltDriver.csproj -c release
+          dotnet nuget push AltDriver/bin/release/AltTester-Driver.2.3.1.nupkg --api-key $NUGET_DEPLOY_KEY --source https://api.nuget.org/v3/index.json
+
+  create-unity-package:
+    runs-on: [self-hosted, MAC37]
+    if: github.event_name == 'release' || github.event.inputs.create-unity-package == 'true'
+    steps:
+      - uses: actions/checkout@v3
+      - name: Create Unity Package
+        run: |
+          mkdir -p public/AltTester || true
+          mkdir -p public/SampleScenes || true
+          VERSION=$(jq -r '.version' Assets/AltTester/package.json | sed 's/\./_/g')
+          $UNITY_2021_3_HOME -batchmode -projectPath $CI_PROJECT_DIR -executeMethod AltTester.AltTesterUnitySDK.Editor.AltTesterEditorWindow.CreatePackages -logFile createPackages.log -quit
+          ls
+          AUT=$(find -E . -regex ".*/AltTester.*\.unitypackage")
+          cp $AUT public/AltTester/AltTesterUnitySDK.unitypackage
+          cp $AUT public/AltTester/AltTesterUnitySDK_${VERSION}.unitypackage
+          cp SampleScenes.unitypackage public/AltTester/SampleScenes.unitypackage
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AltTester
+          path: public/AltTester
+
+  upload-unity-package:
+    runs-on: ubuntu-latest
+    needs: create-unity-package
+    if: (github.event_name == 'release' || github.event.inputs.upload-unity-package == 'true') && (needs.create-unity-package.result == 'success' || github.event.inputs.create-unity-package == 'true')
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: AltTester
+          path: AltTester/
+
+      - name: Upload AltTesterPackage
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          source: AltTester/*
+          target: ${{ secrets.SDK_PATH }}
+          host: ${{ secrets.HOST_IP_ALTTESTER }}
+          port: ${{ secrets.PORT_LIVE_ALTTESTER }}
+          username: ${{ secrets.USERNAME_ALTTESTER }}
+          password: ${{ secrets.PASSWORD_ALTTESTER }}
+          strip_components: 1
+
+  create-jar-archive:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release' || github.event.inputs.create-jar == 'true'
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v3.5.1
+        with:
+          distribution: temurin
+          java-version: 11
+
+      - uses: stCarolas/setup-maven@v4.4
+      - name: Create jar
+        run: |
+          ls
+          mkdir -p public/AltTesterJAR || true
+          ls
+          cd "Bindings~/java"
+          mvn clean compile assembly:single
+          mv target/alttester-jar-with-dependencies.jar ../../public/AltTesterJAR/AltTester-Driver.jar
+
+      - name: Create jar
+        run: |
+          mkdir -p public/AltTesterJAR || true
+          cd "Bindings~/java"
+          mvn clean compile assembly:single
+          mv target/alttester-jar-with-dependencies.jar ../../public/AltTesterJAR/AltTester-Driver.jar
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AltTesterJAR
+          path: public/AltTesterJAR
+
+  upload-java-jar:
+    runs-on: ubuntu-latest
+    needs: create-jar-archive
+    if: (github.event_name == 'release' || github.event.inputs.upload-jar == 'true') && (needs.create-jar-archive.result == 'success' || github.event.inputs.create-jar == 'true')
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: AltTesterJAR
+          path: public/AltTesterJAR
+
+      - name: Upload documentation
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          source: public/AltTesterJAR/*
+          target: ${{ secrets.JAVA_CLIENT_PATH }}
+          host: ${{ secrets.HOST_IP_ALTTESTER }}
+          port: ${{ secrets.PORT_LIVE_ALTTESTER }}
+          username: ${{ secrets.USERNAME_ALTTESTER }}
+          password: ${{ secrets.PASSWORD_ALTTESTER }}
+          strip_components: 1
+
+  java-release:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release' || github.event.inputs.java-release == 'true'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: Configure Maven settings
+        uses: s4u/maven-settings-action@v2.8.0
+        with:
+          servers: |
+            [
+              {
+                "id": "central",
+                "username": "${{ secrets.CENTRAL_USERNAME }}",
+                "password": "${{ secrets.CENTRAL_PASSWORD }}"
+              }
+            ]
+
+      - name: Configure GPG for CI
+        run: |
+          mkdir -p ~/.gnupg
+          echo "use-agent" >> ~/.gnupg/gpg.conf
+          echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
+          echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
+          chmod 700 ~/.gnupg
+          chmod 600 ~/.gnupg/gpg.conf ~/.gnupg/gpg-agent.conf
+
+      - name: Publish to Central Portal
+        env:
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: |
+          export GPG_TTY=$(tty)
+          cd "Bindings~/java"
+          mvn -f pom.xml -DperformRelease=true -Dmaven.test.skip=true \
+            -Dgpg.passphrase="${MAVEN_GPG_PASSPHRASE}" \
+            -Dgpg.pinentry-mode=loopback \
+            -Dgpg.batch=true \
+            -Dgpg.no-tty=true \
+            deploy

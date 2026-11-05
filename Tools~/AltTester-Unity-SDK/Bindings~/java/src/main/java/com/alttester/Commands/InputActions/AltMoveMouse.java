@@ -1,0 +1,37 @@
+/*
+    Copyright(C) 2026 Altom Consulting
+*/
+
+package com.alttester.Commands.InputActions;
+
+import com.alttester.Commands.AltBaseCommand;
+import com.alttester.IMessageHandler;
+
+/**
+ * Simulate mouse movement in your application. This command does not wait for
+ * the movement to
+ * finish.
+ */
+public class AltMoveMouse extends AltBaseCommand {
+
+  /**
+   * @param params the builder for the mouse moves command.
+   */
+  private AltMoveMouseParams params;
+
+  public AltMoveMouse(IMessageHandler messageHandler, AltMoveMouseParams params) {
+    super(messageHandler);
+    this.params = params;
+  }
+
+  public void Execute() {
+    SendCommand(params);
+    String data = recvall(params, String.class);
+    validateResponse("Ok", data);
+
+    if (params.getWait()) {
+      data = recvall(params, String.class);
+      validateResponse("Finished", data);
+    }
+  }
+}

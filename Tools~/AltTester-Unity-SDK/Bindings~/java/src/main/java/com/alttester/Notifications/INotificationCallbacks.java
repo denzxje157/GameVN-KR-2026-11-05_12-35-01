@@ -1,0 +1,16 @@
+/*
+    Copyright(C) 2026 Altom Consulting
+*/
+
+package com.alttester.Notifications;
+
+public interface INotificationCallbacks {
+    void SceneLoadedCallBack(
+            AltLoadSceneNotificationResultParams altLoadSceneNotificationResultParams);
+
+    void SceneUnloadedCallBack(String sceneName);
+
+    void LogCallBack(AltLogNotificationResultParams altLogNotificationResultParams);
+
+    void ApplicationPausedCallBack(boolean applicationPaused);
+}

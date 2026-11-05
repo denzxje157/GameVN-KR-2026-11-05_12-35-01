@@ -1,0 +1,16 @@
+# DỰ ÁN: MYTHIC BUMPER (LỄ HỘI LINH VẬT)
+- Engine: Unity 2022 LTS (2D Physics, Top-down view).
+- Thể loại: Casual / Hyper-casual Physics Bumper (Đấu đẩy, bắn bi / slingshot).
+- Mục tiêu: Người chơi kéo - thả để bắn linh vật lao vào đối thủ, đẩy đối thủ ra khỏi vòng tròn sới đấu.
+
+## QUY TẮC VIẾT CODE C#:
+1. Luôn dùng Unity 2D Physics (Rigidbody2D, CircleCollider2D, AddForce with ForceMode2D.Impulse).
+2. Code tối giản, sạch, có comment tiếng Việt rõ ràng.
+3. Không dùng các thư viện ngoài phức tạp. Ưu tiên code trực tiếp chạy được ngay khi gắn vào GameObject.
+4. Mọi thông số (tốc độ, lực đẩy, thời gian) đều phải để `public` hoặc `[SerializeField]` để tinh chỉnh trong Unity Inspector.
+
+## DANH SÁCH SCRIPT CHÍNH CẦN LÀM:
+- PlayerController.cs: Kéo lùi bằng chuột/cảm ứng, hiển thị LineRenderer căn lực, thả ra để bắn.
+- AIEnemy.cs: Tự căn góc hướng về Player, nạp lực và lao tới theo chu kỳ.
+- GameManager.cs: Quản lý tính điểm, đếm số lần rơi khỏi sân, màn hình Win/Lose.
+- ObstacleBumper.cs: Xử lý va chạm nảy mạnh khi đụng vào Vại gốm / Chum Kimchi.

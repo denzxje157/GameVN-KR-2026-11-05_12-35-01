@@ -1,0 +1,186 @@
+================================================================================
+          BÁO CÁO KIỂM THỬ TỰ ĐỘNG TOÀN DIỆN: MYTHIC BUMPER (KGW2026)
+          Thời gian chạy test: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
+================================================================================
+
+  [PASS] Map 1: Sới Đấu Lễ Hội Dân Gian (san1-lang) - Tệp map tồn tại 
+  [PASS] Map 1: Sới Đấu Lễ Hội Dân Gian (san1-lang) - Tệp thumbnail tồn tại 
+  [PASS] Map 1: Sới Đấu Lễ Hội Dân Gian (san1-lang) - Độ phân giải chuẩn (1024x572px)
+  [PASS] Map 1: Sới Đấu Lễ Hội Dân Gian (san1-lang) - Độ sắc nét đồ họa (Laplacian Var > 100) (2346.3)
+  [PASS] Map 2: Sơn Cảnh Kỳ Quan - Yên Tử & Seoraksan (san-yentu) - Tệp map tồn tại 
+  [PASS] Map 2: Sơn Cảnh Kỳ Quan - Yên Tử & Seoraksan (san-yentu) - Tệp thumbnail tồn tại 
+  [PASS] Map 2: Sơn Cảnh Kỳ Quan - Yên Tử & Seoraksan (san-yentu) - Độ phân giải chuẩn (1024x572px)
+  [PASS] Map 2: Sơn Cảnh Kỳ Quan - Yên Tử & Seoraksan (san-yentu) - Độ sắc nét đồ họa (Laplacian Var > 100) (2208.1)
+  [PASS] Map 3: Phố Đêm Rực Rỡ - Hội An & Myeongdong (dan-dempho) - Tệp map tồn tại 
+  [PASS] Map 3: Phố Đêm Rực Rỡ - Hội An & Myeongdong (dan-dempho) - Tệp thumbnail tồn tại 
+  [PASS] Map 3: Phố Đêm Rực Rỡ - Hội An & Myeongdong (dan-dempho) - Độ phân giải chuẩn (1024x572px)
+  [PASS] Map 3: Phố Đêm Rực Rỡ - Hội An & Myeongdong (dan-dempho) - Độ sắc nét đồ họa (Laplacian Var > 100) (4290.9)
+  [PASS] Linh vật: trau_vang_idle.png tồn tại 
+  [PASS] trau_vang_idle.png có kênh Alpha (RGBA) 
+  [PASS] trau_vang_idle.png sạch 100% không mảnh vỡ rác ngoại vi (mảnh rác=0)
+  [PASS] Linh vật: trau_vang_skill_kim_nguu_tran_dia.png tồn tại 
+  [PASS] trau_vang_skill_kim_nguu_tran_dia.png có kênh Alpha (RGBA) 
+  [PASS] trau_vang_skill_kim_nguu_tran_dia.png sạch 100% không mảnh vỡ rác ngoại vi (mảnh rác=0)
+  [PASS] Linh vật: rong_vang_idle.png tồn tại 
+  [PASS] rong_vang_idle.png có kênh Alpha (RGBA) 
+  [PASS] rong_vang_idle.png sạch 100% không mảnh vỡ rác ngoại vi (mảnh rác=0)
+  [PASS] Linh vật: rong_vang_skill_luot_may.png tồn tại 
+  [PASS] rong_vang_skill_luot_may.png có kênh Alpha (RGBA) 
+  [PASS] rong_vang_skill_luot_may.png sạch 100% không mảnh vỡ rác ngoại vi (mảnh rác=0)
+  [PASS] Linh vật: lan_su_idle.png tồn tại 
+  [PASS] lan_su_idle.png có kênh Alpha (RGBA) 
+  [PASS] lan_su_idle.png sạch 100% không mảnh vỡ rác ngoại vi (mảnh rác=0)
+  [PASS] Linh vật: be_tre_idle.png tồn tại 
+  [PASS] be_tre_idle.png có kênh Alpha (RGBA) 
+  [PASS] be_tre_idle.png sạch 100% không mảnh vỡ rác ngoại vi (mảnh rác=0)
+  [PASS] Linh vật: chim_lac_idle.png tồn tại 
+  [PASS] chim_lac_idle.png có kênh Alpha (RGBA) 
+  [PASS] chim_lac_idle.png sạch 100% không mảnh vỡ rác ngoại vi (mảnh rác=0)
+  [PASS] Linh vật: ho_baekho_idle.png tồn tại 
+  [PASS] ho_baekho_idle.png có kênh Alpha (RGBA) 
+  [PASS] ho_baekho_idle.png sạch 100% không mảnh vỡ rác ngoại vi (mảnh rác=0)
+  [PASS] Linh vật: ho_baekho_skill_ho_khieu_son_ha.png tồn tại 
+  [PASS] ho_baekho_skill_ho_khieu_son_ha.png có kênh Alpha (RGBA) 
+  [PASS] ho_baekho_skill_ho_khieu_son_ha.png sạch 100% không mảnh vỡ rác ngoại vi (mảnh rác=0)
+  [PASS] Linh vật: haechi_idle.png tồn tại 
+  [PASS] haechi_idle.png có kênh Alpha (RGBA) 
+  [PASS] haechi_idle.png sạch 100% không mảnh vỡ rác ngoại vi (mảnh rác=0)
+  [PASS] Linh vật: haechi_skill_linh_khi_tru_ta.png tồn tại 
+  [PASS] haechi_skill_linh_khi_tru_ta.png có kênh Alpha (RGBA) 
+  [PASS] haechi_skill_linh_khi_tru_ta.png sạch 100% không mảnh vỡ rác ngoại vi (mảnh rác=0)
+  [PASS] Linh vật: dokkaebi_idle.png tồn tại 
+  [PASS] dokkaebi_idle.png có kênh Alpha (RGBA) 
+  [PASS] dokkaebi_idle.png sạch 100% không mảnh vỡ rác ngoại vi (mảnh rác=0)
+  [PASS] Linh vật: gau_dangoon_idle.png tồn tại 
+  [PASS] gau_dangoon_idle.png có kênh Alpha (RGBA) 
+  [PASS] gau_dangoon_idle.png sạch 100% không mảnh vỡ rác ngoại vi (mảnh rác=0)
+  [PASS] Linh vật: samjoko_idle.png tồn tại 
+  [PASS] samjoko_idle.png có kênh Alpha (RGBA) 
+  [PASS] samjoko_idle.png sạch 100% không mảnh vỡ rác ngoại vi (mảnh rác=0)
+  [PASS] Avatar: avatar_trau_vang.png tồn tại 
+  [PASS] Avatar: avatar_rong_vang.png tồn tại 
+  [PASS] Avatar: avatar_lan_su.png tồn tại 
+  [PASS] Avatar: avatar_be_tre.png tồn tại 
+  [PASS] Avatar: avatar_chim_lac.png tồn tại 
+  [PASS] Avatar: avatar_ho_baekho.png tồn tại 
+  [PASS] Avatar: avatar_haechi.png tồn tại 
+  [PASS] Avatar: avatar_dokkaebi.png tồn tại 
+  [PASS] Avatar: avatar_gau_dangoon.png tồn tại 
+  [PASS] Avatar: avatar_samjoko.png tồn tại 
+  [PASS] Title Asset: btn_title_local_play.png tồn tại 
+  [PASS] Title Asset: btn_title_pvp.png tồn tại 
+  [PASS] Title Asset: btn_title_codex.png tồn tại 
+  [PASS] Title Asset: btn_title_tutorial.png tồn tại 
+  [PASS] Title Asset: btn_title_settings.png tồn tại 
+  [PASS] Title Asset: btn_title_sound.png tồn tại 
+  [PASS] Title Asset: background_title_screen.png tồn tại 
+  [PASS] Title Asset: title_banner_logo.png tồn tại 
+  [PASS] Title Asset: title_podium_mascots.png tồn tại 
+  [PASS] Match Hub Asset: btn_vao_tran_fire.png tồn tại 
+  [PASS] Match Hub Asset: btn_quay_lai.png tồn tại 
+  [PASS] Match Hub Asset: icon_fire_vs.png tồn tại 
+  [PASS] Match Hub Asset: card_character_vn.png tồn tại 
+  [PASS] Match Hub Asset: card_character_kr.png tồn tại 
+  [PASS] Match Hub Asset: frame_map_oval.png tồn tại 
+  [PASS] Vật phẩm: Bánh Chưng (VN) tồn tại 
+  [PASS] Vật phẩm: Bánh Gạo Tteokbokki (KR) tồn tại 
+  [PASS] Vật phẩm: Nón Lá Pháp Bảo (VN) tồn tại 
+  [PASS] Vật phẩm: Quạt Lửa Buchaechum (KR) tồn tại 
+  [PASS] Vật phẩm: Chum Kimchi Bumper tồn tại 
+  [PASS] Vật phẩm: Vại Gốm Cổ Bumper tồn tại 
+  [PASS] Vật phẩm: Vũng Bùn Làm Chậm 50% tồn tại 
+  [PASS] Tệp Scene MainGame.unity tồn tại 
+  [PASS] Scene: Title_Canvas (Màn hình Khởi Động Title Screen rực rỡ) 
+  [PASS] Scene: Btn_Title_LocalPlay (Nút ĐẤU ĐỐI KHÁNG trên Title Screen) 
+  [PASS] Scene: MainMenu_Canvas (Giao diện Menu Chính / Hub Chọn Sới Đấu & Linh Vật) 
+  [PASS] Scene: Panel_MapSelect (Khung duyệt 4 sới đấu Carousel) 
+  [PASS] Scene: Btn_StartBattle (Nút to Bắt Đầu Tranh Tài (CHIẾN ĐẤU!)) 
+  [PASS] Scene: Btn_Tutorial (Nút Mở Popup Hướng Dẫn Luật) 
+  [PASS] Scene: Card_Player (Thẻ chọn linh vật Việt Nam (5 tướng VN)) 
+  [PASS] Scene: Card_Enemy (Thẻ chọn đối thủ Hàn Quốc (5 tướng HQ)) 
+  [PASS] Scene: Mobile_Canvas (Giao diện Mobile HUD trong trận) 
+  [PASS] Scene: Top_HUD (Thanh tỉ số và đếm ngược trên cùng) 
+  [PASS] Scene: Btn_Pause (Nút Tạm Dừng trận đấu) 
+  [PASS] Scene: Btn_Home (Nút Về Menu Chính từ trong trận) 
+  [PASS] Scene: Btn_Restart (Nút Chơi Lại / Reset Round (↺)) 
+  [PASS] Scene: Btn_Sound (Nút Bật/Tắt Âm Thanh) 
+  [PASS] Scene: Btn_Swap (Nút Đổi Người Tag-Team) 
+  [PASS] Scene: Btn_Skill (Nút Tuyệt Kỹ Linh Vật) 
+  [PASS] Scene: Full_Background (Hình nền tự động căn vừa khít góc nhìn Camera) 
+  [PASS] Scene: Arena_Stadium (Vòng bo sới đấu bắt Ring-Out Trigger) 
+  [PASS] Scene: Player_TrauVang (GameObject Linh vật Người chơi) 
+  [PASS] Scene: Enemy_HoBaekho (GameObject Linh vật Đối thủ AI) 
+  [PASS] Scene: Item_Spawner (Hệ thống thả vật phẩm văn hóa ngẫu nhiên) 
+  [PASS] Scene: VFX_Manager (Hệ thống hiệu ứng kỹ năng & Tag-Team) 
+  [PASS] Scene: GameManager (Hệ thống quản lý điểm số Best of 5) 
+  [PASS] Scene: Full_Background gán sprite san1-lang.png 
+  [PASS] Scene: Image_MapPreview gán thumbnail thumb_san1-lang.png 
+  [PASS] Scene: Label_Map hiển thị 3 bản đồ 
+  [PASS] Scene: GameManager cấu hình mảng mapBackgroundSprites 
+  [PASS] Scene: MenuManager cấu hình san-yentu.png 
+  [PASS] Scene: MenuManager cấu hình dan-dempho.png 
+  [PASS] Sprite Sheet Hoạt ảnh VN: animation-vietnam.png tồn tại 
+  [PASS] Sprite Sheet Hoạt ảnh HQ: animation-hanquoc.png tồn tại 
+  [PASS] Meta file Sprite Sheet VN được cấu hình Multiple 
+  [PASS] Meta file Sprite Sheet HQ được cấu hình Multiple 
+  [PASS] Animation Clip Idle: TrauVang_Idle.anim tồn tại 
+  [PASS] Animation Clip Action: TrauVang_Action.anim tồn tại 
+  [PASS] Animator Controller: AC_TrauVang.controller tồn tại 
+  [PASS] Animation Clip Idle: RongVang_Idle.anim tồn tại 
+  [PASS] Animation Clip Action: RongVang_Action.anim tồn tại 
+  [PASS] Animator Controller: AC_RongVang.controller tồn tại 
+  [PASS] Animation Clip Idle: LanSu_Idle.anim tồn tại 
+  [PASS] Animation Clip Action: LanSu_Action.anim tồn tại 
+  [PASS] Animator Controller: AC_LanSu.controller tồn tại 
+  [PASS] Animation Clip Idle: BeTre_Idle.anim tồn tại 
+  [PASS] Animation Clip Action: BeTre_Action.anim tồn tại 
+  [PASS] Animator Controller: AC_BeTre.controller tồn tại 
+  [PASS] Animation Clip Idle: ChimLac_Idle.anim tồn tại 
+  [PASS] Animation Clip Action: ChimLac_Action.anim tồn tại 
+  [PASS] Animator Controller: AC_ChimLac.controller tồn tại 
+  [PASS] Animation Clip Idle: HoBaekho_Idle.anim tồn tại 
+  [PASS] Animation Clip Action: HoBaekho_Action.anim tồn tại 
+  [PASS] Animator Controller: AC_HoBaekho.controller tồn tại 
+  [PASS] Animation Clip Idle: Haechi_Idle.anim tồn tại 
+  [PASS] Animation Clip Action: Haechi_Action.anim tồn tại 
+  [PASS] Animator Controller: AC_Haechi.controller tồn tại 
+  [PASS] Animation Clip Idle: Dokkaebi_Idle.anim tồn tại 
+  [PASS] Animation Clip Action: Dokkaebi_Action.anim tồn tại 
+  [PASS] Animator Controller: AC_Dokkaebi.controller tồn tại 
+  [PASS] Animation Clip Idle: GauDangoon_Idle.anim tồn tại 
+  [PASS] Animation Clip Action: GauDangoon_Action.anim tồn tại 
+  [PASS] Animator Controller: AC_GauDangoon.controller tồn tại 
+  [PASS] Animation Clip Idle: Samjoko_Idle.anim tồn tại 
+  [PASS] Animation Clip Action: Samjoko_Action.anim tồn tại 
+  [PASS] Animator Controller: AC_Samjoko.controller tồn tại 
+  [PASS] Scene: Player_TrauVang có gắn Animator component 
+  [PASS] Scene: Enemy_HoBaekho có gắn Animator component 
+  [PASS] Số lượng file C# Gameplay: 14 scripts 
+  [PASS] Script: AIController.cs 
+  [PASS] Script: AudioManager.cs 
+  [PASS] Script: CharacterSkill.cs 
+  [PASS] Script: CulturalItem.cs 
+  [PASS] Script: FullScreenBackground.cs 
+  [PASS] Script: GameManager.cs 
+  [PASS] Script: ItemSpawner.cs 
+  [PASS] Script: LocalizationManager.cs 
+  [PASS] Script: MenuManager.cs 
+  [PASS] Script: MudObstacle.cs 
+  [PASS] Script: ObstacleBumper.cs 
+  [PASS] Script: PlayerController.cs 
+  [PASS] Script: RingOutDetector.cs 
+  [PASS] Script: VFXManager.cs 
+  [PASS] Sprite Khung Gỗ Lớn: panel_settings_large.png tồn tại 
+  [PASS] Sprite Nút Đóng Gỗ: btn_settings_dong.png tồn tại 
+  [PASS] Sprite Thanh Trượt Gỗ: slider_bar_wood.png tồn tại 
+  [PASS] Sprite Nút Kéo Knob: slider_knob_wood.png tồn tại 
+  [PASS] Font TextMeshPro: LiberationSans SDF.asset tồn tại 
+  [PASS] Scene: Settings_Popup có kích thước chuẩn lớn 960x620 
+  [PASS] Scene: Slider_BGM tồn tại 
+  [PASS] Scene: Slider_SFX tồn tại 
+  [PASS] Scene: Btn_CloseSettings dùng sprite gỗ chuẩn 
+  [PASS] Scene: Tiêu đề cài đặt dùng TextMeshPro 
+
+================================================================================
+TỔNG KẾT: 177 PASS / 0 FAIL - TỶ LỆ ĐẠT: 100.0%
+================================================================================

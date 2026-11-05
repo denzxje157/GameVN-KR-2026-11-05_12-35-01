@@ -1,0 +1,22 @@
+/*
+    Copyright(C) 2026 Altom Consulting
+*/
+
+namespace AltTester.AltTesterSDK.Driver.Commands
+{
+    public class AltEndTouch : AltBaseCommand
+    {
+        AltEndTouchParams cmdParams;
+
+        public AltEndTouch(IDriverCommunication commHandler, int fingerId) : base(commHandler)
+        {
+            this.cmdParams = new AltEndTouchParams(fingerId);
+        }
+        public void Execute()
+        {
+            CommHandler.Send(cmdParams);
+            var data = CommHandler.Recvall<string>(cmdParams);
+            ValidateResponse("Ok", data);
+        }
+    }
+}
